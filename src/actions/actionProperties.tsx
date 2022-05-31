@@ -656,6 +656,16 @@ export const actionChangeFontFamily = register({
       icon: JSX.Element;
     }[] = [
       {
+        value: FONT_FAMILY.Mark,
+        text: t("labels.handDrawn"),
+        icon: <FontFamilyHandDrawnIcon theme={appState.theme} />,
+      },
+      {
+        value: FONT_FAMILY.Jianhao,
+        text: t("labels.handDrawn"),
+        icon: <FontFamilyHandDrawnIcon theme={appState.theme} />,
+      },
+      {
         value: FONT_FAMILY.Virgil,
         text: t("labels.handDrawn"),
         icon: <FontFamilyHandDrawnIcon theme={appState.theme} />,
