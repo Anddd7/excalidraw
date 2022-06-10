@@ -67,8 +67,8 @@ export const CLASSES = {
 
 // 1-based in case we ever do `if(element.fontFamily)`
 export const FONT_FAMILY = {
-  Mark: 1,
-  Jianhao: 2,
+  Jason: 1,
+  Mark: 2,
   Virgil: 3,
   Helvetica: 4,
   Cascadia: 5,
