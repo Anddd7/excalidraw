@@ -81,7 +81,7 @@ export const getDefaultAppState = (): Omit<
     showStats: false,
     startBoundElement: null,
     suggestedBindings: [],
-    toastMessage: null,
+    toast: null,
     viewBackgroundColor: oc.white,
     zenModeEnabled: false,
     zoom: {
@@ -90,6 +90,7 @@ export const getDefaultAppState = (): Omit<
     viewModeEnabled: false,
     pendingImageElementId: null,
     showHyperlinkPopup: false,
+    selectedLinearElement: null,
   };
 };
 
@@ -173,7 +174,7 @@ const APP_STATE_STORAGE_CONF = (<
   showStats: { browser: true, export: false, server: false },
   startBoundElement: { browser: false, export: false, server: false },
   suggestedBindings: { browser: false, export: false, server: false },
-  toastMessage: { browser: false, export: false, server: false },
+  toast: { browser: false, export: false, server: false },
   viewBackgroundColor: { browser: true, export: true, server: true },
   width: { browser: false, export: false, server: false },
   zenModeEnabled: { browser: true, export: false, server: false },
@@ -181,6 +182,7 @@ const APP_STATE_STORAGE_CONF = (<
   viewModeEnabled: { browser: false, export: false, server: false },
   pendingImageElementId: { browser: false, export: false, server: false },
   showHyperlinkPopup: { browser: false, export: false, server: false },
+  selectedLinearElement: { browser: true, export: false, server: false },
 });
 
 const _clearAppStateForStorage = <
