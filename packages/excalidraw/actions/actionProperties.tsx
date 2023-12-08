@@ -177,8 +177,8 @@ const offsetElementAfterFontResize = (
         prevElement.textAlign === "left"
           ? prevElement.x
           : prevElement.x +
-            (prevElement.width - nextElement.width) /
-              (prevElement.textAlign === "center" ? 2 : 1),
+          (prevElement.width - nextElement.width) /
+          (prevElement.textAlign === "center" ? 2 : 1),
       // centering vertically is non-standard, but for Excalidraw I think
       // it makes sense
       y: prevElement.y + (prevElement.height - nextElement.height) / 2,
@@ -251,8 +251,8 @@ export const actionChangeStrokeColor = register({
           (el) => {
             return hasStrokeColor(el.type)
               ? newElementWith(el, {
-                  strokeColor: value.currentItemStrokeColor,
-                })
+                strokeColor: value.currentItemStrokeColor,
+              })
               : el;
           },
           true,
@@ -373,7 +373,7 @@ export const actionChangeFillStyle = register({
               value: "hachure",
               text: `${
                 allElementsZigZag ? t("labels.zigzag") : t("labels.hachure")
-              } (${getShortcutKey("Alt-Click")})`,
+                } (${getShortcutKey("Alt-Click")})`,
               icon: allElementsZigZag ? FillZigZagIcon : FillHachureIcon,
               active: allElementsZigZag ? true : undefined,
               testId: `fill-hachure`,
@@ -402,8 +402,8 @@ export const actionChangeFillStyle = register({
           onClick={(value, event) => {
             const nextValue =
               event.altKey &&
-              value === "hachure" &&
-              selectedElements.every((el) => el.fillStyle === "hachure")
+                value === "hachure" &&
+                selectedElements.every((el) => el.fillStyle === "hachure")
                 ? "zigzag"
                 : value;
 
@@ -773,25 +773,43 @@ export const actionChangeFontFamily = register({
       icon: JSX.Element;
       testId: string;
     }[] = [
-      {
-        value: FONT_FAMILY.Virgil,
-        text: t("labels.handDrawn"),
-        icon: FreedrawIcon,
-        testId: "font-family-virgil",
-      },
-      {
-        value: FONT_FAMILY.Helvetica,
-        text: t("labels.normal"),
-        icon: FontFamilyNormalIcon,
-        testId: "font-family-normal",
-      },
-      {
-        value: FONT_FAMILY.Cascadia,
-        text: t("labels.code"),
-        icon: FontFamilyCodeIcon,
-        testId: "font-family-code",
-      },
-    ];
+        {
+          value: FONT_FAMILY.Jason,
+          text: "Jason 手写",
+          icon: FreedrawIcon,
+          testId: "font-family-json",
+        },
+        {
+          value: FONT_FAMILY.Mark,
+          text: "马可手写",
+          icon: FreedrawIcon,
+          testId: "font-family-maco",
+        },
+        {
+          value: FONT_FAMILY.Jianhao,
+          text: "剑豪手写",
+          icon: FreedrawIcon,
+          testId: "font-family-jianhao",
+        },
+        {
+          value: FONT_FAMILY.Virgil,
+          text: t("labels.handDrawn"),
+          icon: FreedrawIcon,
+          testId: "font-family-virgil",
+        },
+        {
+          value: FONT_FAMILY.Helvetica,
+          text: t("labels.normal"),
+          icon: FontFamilyNormalIcon,
+          testId: "font-family-normal",
+        },
+        {
+          value: FONT_FAMILY.Cascadia,
+          text: t("labels.code"),
+          icon: FontFamilyCodeIcon,
+          testId: "font-family-code",
+        },
+      ];
 
     return (
       <fieldset>
@@ -1024,10 +1042,10 @@ export const actionChangeRoundness = register({
           roundness:
             value === "round"
               ? {
-                  type: isUsingAdaptiveRadius(el.type)
-                    ? ROUNDNESS.ADAPTIVE_RADIUS
-                    : ROUNDNESS.PROPORTIONAL_RADIUS,
-                }
+                type: isUsingAdaptiveRadius(el.type)
+                  ? ROUNDNESS.ADAPTIVE_RADIUS
+                  : ROUNDNESS.PROPORTIONAL_RADIUS,
+              }
               : null,
         }),
       ),
